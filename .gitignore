@@ -26,6 +26,8 @@ Thumbs.db
 # Cache directory (LLM responses, embeddings)
 cache/
 
-# Large datasets
-data/2wikimultihopqa/*.json
+# Large raw datasets
+data/2wikimultihopqa/dev.json
 data/2wikimultihopqa/*.zip
+
+

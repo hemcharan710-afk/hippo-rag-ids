@@ -18,6 +18,9 @@ PROJECT_ROOT: Final[Path] = Path(__file__).resolve().parent.parent
 DATA_DIR: Final[Path] = PROJECT_ROOT / "data"
 DATASET_DIR: Final[Path] = DATA_DIR / "2wikimultihopqa"
 DEV_DATA_FILE: Final[Path] = DATASET_DIR / "dev.json"
+EVAL_SPLIT_FILE: Final[Path] = DATASET_DIR / "eval_split.json"
+TUNE_SPLIT_FILE: Final[Path] = DATASET_DIR / "tune_split.json"
+
 
 SRC_DIR: Final[Path] = PROJECT_ROOT / "src"
 NOTEBOOKS_DIR: Final[Path] = PROJECT_ROOT / "notebooks"
@@ -106,3 +109,4 @@ BOOTSTRAP_ROUNDS: Final[int] = 10000        # B = 10,000 bootstrap iterations
 PERMUTATION_ROUNDS: Final[int] = 100000     # 100,000 sign-flip permutations
 SIGNIFICANCE_ALPHA: Final[float] = 0.05     # Pre-registered significance level alpha
 CONFIDENCE_LEVEL: Final[float] = 0.95       # Nominal confidence level for CIs
+
