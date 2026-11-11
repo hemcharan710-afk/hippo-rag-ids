@@ -10,11 +10,14 @@ exploration must be conducted strictly on the independent tuning split (N=100).
 
 from pathlib import Path
 from typing import Final, Tuple
+from dotenv import load_dotenv
 
 # ==============================================================================
 # 1. Project Directory Structure
 # ==============================================================================
 PROJECT_ROOT: Final[Path] = Path(__file__).resolve().parent.parent
+load_dotenv(PROJECT_ROOT / ".env")
+
 DATA_DIR: Final[Path] = PROJECT_ROOT / "data"
 DATASET_DIR: Final[Path] = DATA_DIR / "2wikimultihopqa"
 DEV_DATA_FILE: Final[Path] = DATASET_DIR / "dev.json"
@@ -99,7 +102,10 @@ EMBEDDING_MODEL_NAME: Final[str] = "sentence-transformers/all-MiniLM-L6-v2"
 EMBEDDING_DIM: Final[int] = 384
 MAX_SEQ_LENGTH: Final[int] = 256        # MiniLM context length limit
 
-LLM_MODEL_NAME: Final[str] = "gpt-4o-mini"
+LLM_PROVIDER: Final[str] = "gemini"     # "gemini" or "openai"
+GEMINI_MODEL_NAME: Final[str] = "gemini-3.1-flash-lite"
+OPENAI_MODEL_NAME: Final[str] = "gpt-4o-mini"
+LLM_MODEL_NAME: Final[str] = GEMINI_MODEL_NAME if LLM_PROVIDER == "gemini" else OPENAI_MODEL_NAME
 LLM_CACHE_VERSION: Final[str] = "v1"
 
 # ==============================================================================

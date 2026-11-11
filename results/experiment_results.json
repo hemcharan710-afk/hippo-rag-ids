@@ -1,0 +1,106 @@
+{
+  "verdict": "BRANCH 1: REJECT H0 IN FAVOR OF H1 (GRAPH SIGNIFICANTLY SUPERIOR)\nThe observed recall@5 gain (Delta = +26.62%) is positive and statistically significant at alpha=0.05 (95% Paired Bootstrap CI: [22.38%, 30.63%], Sign-Flip Permutation p = 0.00000). Random walks on the entity graph provide superior multi-hop retrieval over standard dense vector search.",
+  "delta_r5": 0.26625,
+  "ci_r5": [
+    0.22375,
+    0.30625
+  ],
+  "p_perm_r5": 0.0,
+  "retrieval_metrics": {
+    "recall@2": {
+      "graph_mean": 0.73875,
+      "vector_mean": 0.56875,
+      "delta_mean": 0.17
+    },
+    "all_recall@2": {
+      "graph_mean": 0.51,
+      "vector_mean": 0.22,
+      "delta_mean": 0.29
+    },
+    "recall@5": {
+      "graph_mean": 0.9375,
+      "vector_mean": 0.67125,
+      "delta_mean": 0.26625
+    },
+    "all_recall@5": {
+      "graph_mean": 0.855,
+      "vector_mean": 0.35,
+      "delta_mean": 0.505
+    },
+    "strata": {
+      "compositional": {
+        "count": 83,
+        "graph_recall@5": 0.9457831325301205,
+        "vector_recall@5": 0.608433734939759,
+        "delta_recall@5": 0.3373493975903614
+      },
+      "inference": {
+        "count": 25,
+        "graph_recall@5": 0.9,
+        "vector_recall@5": 0.72,
+        "delta_recall@5": 0.18
+      },
+      "comparison": {
+        "count": 48,
+        "graph_recall@5": 1.0,
+        "vector_recall@5": 0.9166666666666666,
+        "delta_recall@5": 0.08333333333333333
+      },
+      "bridge_comparison": {
+        "count": 44,
+        "graph_recall@5": 0.875,
+        "vector_recall@5": 0.4943181818181818,
+        "delta_recall@5": 0.3806818181818182
+      }
+    },
+    "confirmatory_contrast": {
+      "delta_chain": 0.30092592592592593,
+      "delta_comp": 0.08333333333333333,
+      "contrast_gain": 0.21759259259259262
+    }
+  },
+  "secondary_tests": {
+    "recall@2_gain": {
+      "rank": 1,
+      "raw_p": 0.0,
+      "threshold": 0.0125,
+      "significant": true
+    },
+    "no_walk_control": {
+      "rank": 2,
+      "raw_p": 0.0,
+      "threshold": 0.016666666666666666,
+      "significant": true
+    },
+    "all-recall@5_mcnemar": {
+      "rank": 3,
+      "raw_p": 5.149176749409592e-25,
+      "threshold": 0.025,
+      "significant": true
+    },
+    "damping_sensitivity": {
+      "rank": 4,
+      "raw_p": 0.63413,
+      "threshold": 0.05,
+      "significant": false
+    }
+  },
+  "reader_metrics": {
+    "vector": {
+      "exact_match": 0.88,
+      "f1": 0.88
+    },
+    "graph": {
+      "exact_match": 0.96,
+      "f1": 0.96
+    },
+    "oracle": {
+      "exact_match": 0.96,
+      "f1": 0.96
+    },
+    "closed": {
+      "exact_match": 0.96,
+      "f1": 0.96
+    }
+  }
+}
